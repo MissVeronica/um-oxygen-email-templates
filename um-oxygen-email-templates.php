@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Ultimate Member - Oxygen Builder Email Templates
- * Description:     Extension to Ultimate Member for integration of UM email templates with Oxygen Builder.
+ * Description:     Extension to Ultimate Member for integration of UM email templates with Oxygen Builder or any other User selectable folder path.
  * Version:         2.0.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
