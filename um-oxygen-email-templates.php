@@ -22,7 +22,7 @@ class UM_Oxygen_Builder_Email_Templates {
 
     function __construct( ) {
         
-        $email_templates_oxygen_folder = trim( sanitize_text_field( UM()->options()->get( 'email_templates_oxygen_folder' )));
+        $email_templates_oxygen_folder = trailingslashit( trim( sanitize_text_field( UM()->options()->get( 'email_templates_oxygen_folder' ))));
         if ( empty( $email_templates_oxygen_folder )) {
             $email_templates_oxygen_folder = '/theme-oxygen/ultimate-member/email/';
         }
