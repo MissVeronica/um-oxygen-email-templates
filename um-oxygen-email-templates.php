@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Oxygen Builder Email Templates
  * Description:     Extension to Ultimate Member for integration of UM email templates with Oxygen Builder or any other User selectable folder path.
- * Version:         2.0.0
+ * Version:         2.2.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -19,14 +19,20 @@ if ( ! class_exists( 'UM' ) ) return;
 
 class UM_Oxygen_Builder_Email_Templates {
 
-
     function __construct( ) {
-        
+
         $email_templates_oxygen_folder = trailingslashit( trim( sanitize_text_field( UM()->options()->get( 'email_templates_oxygen_folder' ))));
         if ( empty( $email_templates_oxygen_folder )) {
             $email_templates_oxygen_folder = '/theme-oxygen/ultimate-member/email/';
         }
-        define( 'THEME_OXYGEN', $email_templates_oxygen_folder );
+
+        $profile_templates_oxygen_folder = trailingslashit( trim( sanitize_text_field( UM()->options()->get( 'profile_templates_oxygen_folder' ))));
+        if ( empty( $profile_templates_oxygen_folder )) {
+            $profile_templates_oxygen_folder = '/theme-oxygen/ultimate-member/templates/';
+        }
+
+        define( 'UM_EMAIL_OXYGEN', $email_templates_oxygen_folder );
+        define( 'UM_PROFILE_OXYGEN', $profile_templates_oxygen_folder );
 
         remove_filter( 'um_change_settings_before_save', array( UM()->admin_settings(), 'save_email_templates' ) );
 
@@ -39,21 +45,25 @@ class UM_Oxygen_Builder_Email_Templates {
 
     public function um_get_template_oxygen( $located, $template_name, $path, $t_args ) {
 
-        $template_oxygen = WP_CONTENT_DIR . THEME_OXYGEN . $template_name . ".php";
+        $template_oxygen = WP_CONTENT_DIR . UM_EMAIL_OXYGEN . $template_name . ".php";
         if( file_exists( $template_oxygen )) return $template_oxygen;
         return $located;
     }
 
     public function um_locate_template_oxygen( $template, $template_name, $path ) {
 
-        $template_oxygen = WP_CONTENT_DIR . THEME_OXYGEN . $template_name . ".php";
+        $template_oxygen = WP_CONTENT_DIR . UM_EMAIL_OXYGEN . $template_name . ".php";
         if( file_exists( $template_oxygen )) return $template_oxygen;
+
+        $template_oxygen = WP_CONTENT_DIR . UM_PROFILE_OXYGEN . $template_name;
+        if( file_exists( $template_oxygen )) return $template_oxygen;
+
         return $template;
     }
 
     public function um_locate_email_template_oxygen( $template, $template_name ) {
 
-        $template_oxygen = WP_CONTENT_DIR . THEME_OXYGEN . $template_name . ".php";
+        $template_oxygen = WP_CONTENT_DIR . UM_EMAIL_OXYGEN . $template_name . ".php";
         if( file_exists( $template_oxygen )) return $template_oxygen;
         return $template;
     }
@@ -67,7 +77,7 @@ class UM_Oxygen_Builder_Email_Templates {
         $template = $settings['um_email_template'];
         $content = wp_kses_post( stripslashes( $settings[ $template ] ) );
 
-        $theme_template_path = trailingslashit( WP_CONTENT_DIR . THEME_OXYGEN ) . $template . '.php';
+        $theme_template_path = trailingslashit( WP_CONTENT_DIR . UM_EMAIL_OXYGEN ) . $template . '.php';
         if ( ! file_exists( $theme_template_path ) ) {       
 
             $plugin_template_path = trailingslashit( um_path . 'templates/email/' ) . $template . '.php';
@@ -87,7 +97,7 @@ class UM_Oxygen_Builder_Email_Templates {
                 }
             }
 
-            if ( file_exists( $plugin_template_path ) && is_writable( WP_CONTENT_DIR . THEME_OXYGEN )) {
+            if ( file_exists( $plugin_template_path ) && is_writable( WP_CONTENT_DIR . UM_EMAIL_OXYGEN )) {
                 copy( $plugin_template_path, $theme_template_path );
             }
         }
@@ -118,6 +128,17 @@ class UM_Oxygen_Builder_Email_Templates {
                     'tooltip'     => __( 'Enter the folder path where you will save your customized email templates. Example: /theme-oxygen/ultimate-member/email/ ', 'ultimate-member' ),
                     'size'        => 'medium',
                     'default'     => '/theme-oxygen/ultimate-member/email/',
+                );
+
+        $settings_structure['email']['fields'][] =
+ 
+                array(
+                    'id'          => 'profile_templates_oxygen_folder',
+                    'type'        => 'text',
+                    'label'       => __( 'Profile_Templates - Customzed Profile Folder Path', 'ultimate-member' ),
+                    'tooltip'     => __( 'Enter the folder path where you will save your customized profile templates. Example: /theme-oxygen/ultimate-member/templates/ ', 'ultimate-member' ),
+                    'size'        => 'medium',
+                    'default'     => '/theme-oxygen/ultimate-member/templates/',
                 );
 
         return $settings_structure;
