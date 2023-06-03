@@ -1,4 +1,4 @@
-# UM Oxygen Builder Email Templates
+# UM Oxygen Builder Email and Profile Templates
 Extension to Ultimate Member for integration of UM email and profile templates with Oxygen Builder or any other User selectable folder path.
 
 ## Solution
