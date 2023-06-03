@@ -1,5 +1,5 @@
-# UM Oxygen Builder Email and Profile Templates
-Extension to Ultimate Member for integration of UM email and profile templates with Oxygen Builder or any other User selectable folder path.
+# UM Oxygen Builder Custom Email and Profile Templates
+Extension to Ultimate Member for integration of custom UM email and profile templates with Oxygen Builder or any other User selectable folder path.
 
 ## Solution
 Oxygen Builder is not a WP Theme therefor can't UM template structure be used and this plugin is using a fake "Theme" for saving UM email templates.
