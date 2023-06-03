@@ -6,7 +6,7 @@ Oxygen Builder is not a WP Theme therefor can't UM template structure be used an
 
 Customized email folders are saved outside the WP Themes folder and the UM template structure is created by the plugin when required by UM.
 
-Customized Profile templates are loaded when found in the Oxygen "Theme" folder.
+Customized Profile templates are loaded when found in the Oxygen "Theme" folder. The folder structure in <code>.../ultimate-member/templates/</code> is maintained.
 
 ## Settings
 1. UM Settings -> Email -> "Email Templates - Customized Email Folder"
