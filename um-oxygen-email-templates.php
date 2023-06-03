@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:     Ultimate Member - Oxygen Builder Email Templates
- * Description:     Extension to Ultimate Member for integration of UM email templates with Oxygen Builder or any other User selectable folder path.
+ * Plugin Name:     Ultimate Member - Oxygen Builder Email Profile Templates
+ * Description:     Extension to Ultimate Member for integration of UM email and profile templates with Oxygen Builder or any other User selectable folder path.
  * Version:         2.2.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
@@ -124,7 +124,7 @@ class UM_Oxygen_Builder_Email_Templates {
                 array(
                     'id'          => 'email_templates_oxygen_folder',
                     'type'        => 'text',
-                    'label'       => __( 'Email_Templates - Customzed Email Folder Path', 'ultimate-member' ),
+                    'label'       => __( 'Email Templates - Customzed Email Folder', 'ultimate-member' ),
                     'tooltip'     => __( 'Enter the folder path where you will save your customized email templates. Example: /theme-oxygen/ultimate-member/email/ ', 'ultimate-member' ),
                     'size'        => 'medium',
                     'default'     => '/theme-oxygen/ultimate-member/email/',
@@ -135,7 +135,7 @@ class UM_Oxygen_Builder_Email_Templates {
                 array(
                     'id'          => 'profile_templates_oxygen_folder',
                     'type'        => 'text',
-                    'label'       => __( 'Profile_Templates - Customzed Profile Folder Path', 'ultimate-member' ),
+                    'label'       => __( 'Profile Templates - Customzed Profile Folder', 'ultimate-member' ),
                     'tooltip'     => __( 'Enter the folder path where you will save your customized profile templates. Example: /theme-oxygen/ultimate-member/templates/ ', 'ultimate-member' ),
                     'size'        => 'medium',
                     'default'     => '/theme-oxygen/ultimate-member/templates/',
