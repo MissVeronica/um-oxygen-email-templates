@@ -9,11 +9,11 @@ Customized email folders are saved outside the WP Themes folder and the UM templ
 Customized Profile templates are loaded when found in the Oxygen "Theme" folder.
 
 ## Settings
-1. UM Settings -> Email -> "Email_Templates - Customized Email Folder Path"
-2. The "Customized Email Folder Path" is created by the plugin if required.
-3. Default folder path is "/theme-oxygen/ultimate-member/email/"
-4. UM Settings -> Email -> "Profile_Templates - Customized Profile Folder Path"
-5. Default folder path is "/theme-oxygen/ultimate-member/templates/"
+1. UM Settings -> Email -> "Email Templates - Customized Email Folder"
+2. The "Customized Email Folder" is created by the plugin if required.
+3. Default folder is "/theme-oxygen/ultimate-member/email/"
+4. UM Settings -> Email -> "Profile Templates - Customized Profile Folder"
+5. Default folder is "/theme-oxygen/ultimate-member/templates/"
 
 ## Installation
 1. Download zip file. 
@@ -21,5 +21,6 @@ Customized Profile templates are loaded when found in the Oxygen "Theme" folder.
 3. Activate the plugin
 
 ## Updates
-1. Version 2.0.0 New option: UM Settings -> Email -> "Email_Templates - Customized Email Folder Path"
-2. Version 2.2.0 Addition of UM Customized Profile Templates
+1. Version 2.0.0 New option: UM Settings -> Email -> "Email Templates - Customized Email Folder"
+2. Version 2.1.0 Code improvements
+3. Version 2.2.0 New option: UM Settings -> Email -> "Profile Templates - Customized Profile Folder"
