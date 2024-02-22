@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Oxygen Builder Custom Templates
  * Description:     Extension to Ultimate Member for integration of custom UM email and profile templates with Oxygen Builder or any other User selectable folder path.
- * Version:         2.2.0
+ * Version:         2.3.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -10,7 +10,7 @@
  * Author URI:      https://github.com/MissVeronica
  * Text Domain:     ultimate-member
  * Domain Path:     /languages
- * UM version:      2.5.0
+ * UM version:      2.8.3
  */
 
 
@@ -119,24 +119,27 @@ class UM_Oxygen_Builder_Custom_Templates {
 
     public function um_settings_structure_templates_oxygen( $settings_structure ) {
 
-        $settings_structure['email']['fields'][] =
+        $settings_structure['email']['form_sections']['oxygen']['title']       = __( 'Oxygen Builder Custom Templates', 'ultimate-member' );
+        $settings_structure['email']['form_sections']['oxygen']['description'] = __( 'Plugin version 2.3.0 - tested with UM 2.8.3', 'ultimate-member' );
+
+        $settings_structure['email']['form_sections']['oxygen']['fields'][] =
  
                 array(
                     'id'          => 'email_templates_oxygen_folder',
                     'type'        => 'text',
                     'label'       => __( 'Email Templates - Customized Email Folder Path', 'ultimate-member' ),
-                    'tooltip'     => __( 'Enter the folder path where you will save your customized email templates. Example: /theme-oxygen/ultimate-member/email/ ', 'ultimate-member' ),
+                    'description' => __( 'Enter the folder path where you will save your customized email templates. Example: /theme-oxygen/ultimate-member/email/ ', 'ultimate-member' ),
                     'size'        => 'medium',
                     'default'     => '/theme-oxygen/ultimate-member/email/',
                 );
 
-        $settings_structure['email']['fields'][] =
+        $settings_structure['email']['form_sections']['oxygen']['fields'][] =
  
                 array(
                     'id'          => 'profile_templates_oxygen_folder',
                     'type'        => 'text',
                     'label'       => __( 'Profile Templates - Customized Profile Folder Path', 'ultimate-member' ),
-                    'tooltip'     => __( 'Enter the folder path where you will save your customized profile templates. Example: /theme-oxygen/ultimate-member/templates/ ', 'ultimate-member' ),
+                    'description' => __( 'Enter the folder path where you will save your customized profile templates. Example: /theme-oxygen/ultimate-member/templates/ ', 'ultimate-member' ),
                     'size'        => 'medium',
                     'default'     => '/theme-oxygen/ultimate-member/templates/',
                 );
