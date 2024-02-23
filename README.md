@@ -24,4 +24,4 @@ Customized Profile templates are loaded when found in the Oxygen "Theme" folder.
 1. Version 2.0.0 New option: UM Settings -> Email -> "Email Templates - Customized Email Folder"
 2. Version 2.1.0 Code improvements
 3. Version 2.2.0 New option: UM Settings -> Email -> "Profile Templates - Customized Profile Folder"
-4. Version 2.3.0 Tested with UM 2.8.3
+4. Version 2.3.0 Updated for UM 2.8.3
